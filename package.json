@@ -1,0 +1,19 @@
+{
+  "name": "req-header-parser-microservice",
+  "version": "1.0.0",
+  "description": "Application to parse request header for ip address, language and operating system of browser. ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1", 
+    "start": "npm app.js", 
+    "watch": "nodemon app.js"
+  },
+  "author": "Alistair Willis",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
