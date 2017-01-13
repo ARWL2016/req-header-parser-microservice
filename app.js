@@ -7,7 +7,8 @@ var port = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
 
-    var ip = (req.ip).replace(/:+[a-z]+/g, ""),
+    var ip = (req.ip).replace(/:+|[a-z]+/g, ""),
+
     userAgent = req.get('user-agent'),
     acceptLanguage = req.get('accept-language'),
 
