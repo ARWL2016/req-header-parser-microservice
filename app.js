@@ -7,19 +7,19 @@ var port = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
 
-    var ip = (req.ip).replace(/:+|[a-z]+/g, ""),
+    var ip = (req.ip).replace(/:+|[a-z]+/g, "");
 
-    userAgent = req.get('user-agent'),
-    acceptLanguage = req.get('accept-language'),
+    var userAgent = req.get('user-agent');
+    var acceptLanguage = req.get('accept-language');
 
-    os = parse.parseUserAgent(userAgent),
-    lang = parse.parseAcceptLanguage(acceptLanguage),
+    var os = parse.parseUserAgent(userAgent);
+    var lang = parse.parseAcceptLanguage(acceptLanguage); 
 
-    responseObject = {
+    var responseObject = {
         ip: ip, 
         lang: lang, 
         os: os
-    }
+    }; 
 
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify(responseObject, undefined, 2));
