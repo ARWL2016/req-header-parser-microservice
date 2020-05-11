@@ -3,7 +3,7 @@ const express = require('express');
 var app = express(); 
 var parse = require('./parse-header/parse-header');
 
-var port = process.env.PORT || 3000; 
+var port = process.env.PORT || 3003; 
 
 app.get('/', (req, res) => {
 
@@ -19,7 +19,9 @@ app.get('/', (req, res) => {
         ip: ip, 
         lang: lang, 
         os: os
-    }
+    };
+
+    console.log(req.ip);
 
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify(responseObject, undefined, 2));
